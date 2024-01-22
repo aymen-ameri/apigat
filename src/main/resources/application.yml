@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+spring:
+  zipkin:
+    base-url: http://172.17.0.2:9411 # Zipkin server URL
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  application:
+    name: gat
+  cloud:
+    consul:
+      host: consul
+      port: 8500
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: DEPARTEMENT-SERVICE
+          uri: lb://DEPARTEMENT-SERVICE
+          predicates:
+            - Path=/departement/**
