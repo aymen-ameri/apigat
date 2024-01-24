@@ -24,3 +24,8 @@ spring:
           uri: lb://DEPARTEMENT-SERVICE
           predicates:
             - Path=/departement/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
