@@ -7,9 +7,9 @@ spring:
   sleuth:
     sampler:
       probability: 1.0
-
   application:
-  name: gat
+    name: gat
+
 cloud:
   consul:
     host: consul
@@ -33,4 +33,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, prometheus
+        include: 
+          - health
+          - prometheus
+          # Add any other endpoints you want to expose here
