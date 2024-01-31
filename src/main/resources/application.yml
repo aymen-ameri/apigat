@@ -24,8 +24,8 @@ spring:
           uri: lb://DEPARTEMENT-SERVICE
           predicates:
             - Path=/departement/**
-        - id: test_service
-          uri: lb://test_service
+        - id: nest
+          uri: lb://nest
           predicates:
             - Path=/nest/**
 management:
